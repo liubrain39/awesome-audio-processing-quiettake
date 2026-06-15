@@ -1,162 +1,30 @@
 # Awesome Audio Processing
 
-> A curated list of audio processing tools, libraries, and resources — organized by **equalizer**, **visualization**, **lyrics/subtitle synchronization**, and **audio analysis**.
+> A curated list of audio processing tools, libraries, and resources — organized by core development, AI intelligence, and end-user applications.
 
 ---
 
 ## Table of Contents
 
-- [Equalizer](#equalizer)
-- [Visualization](#visualization)
-- [Lyrics & Subtitle Synchronization](#lyrics--subtitle-synchronization)
-- [Audio Processing & Analysis](#audio-processing--analysis)
-- [Web Audio API](#web-audio-api)
-- [DSP & Plugin Development](#dsp--plugin-development)
+- [I. Core Development](#i-core-development)
+  - [Audio Processing & Analysis](#audio-processing--analysis)
+  - [DSP & Plugin Development](#dsp--plugin-development)
+  - [Web Audio API](#web-audio-api)
+- [II. AI & Voice Intelligence](#ii-ai--voice-intelligence)
+  - [Speech & Voice (STT & TTS)](#speech--voice-stt--tts)
+  - [Noise Reduction & Enhancement](#noise-reduction--enhancement)
+  - [Audio Datasets](#audio-datasets)
+- [III. Tools & Applications](#iii-tools--applications)
+  - [Lyrics & Subtitle Synchronization](#lyrics--subtitle-synchronization)
+  - [Equalizer](#equalizer)
+  - [Visualization](#visualization)
+- [IV. Learning & Community](#iv-learning--community)
+  - [Resources & Learning](#resources--learning)
+  - [Contributing](#contributing)
 
 ---
 
-## Equalizer
-
-> Tools and libraries that provide frequency band control (graphic/parametric EQ), filtering, and gain adjustment.
-
-### Python
-
-| Project | Language | What it does | License | Link |
-|---------|----------|--------------|---------|------|
-| **pedalboard** (Spotify) | Python + C++ | VST3/AU plugin host with 40+ built-in effects including EQ, compressor, reverb. | BSD-3 | [GitHub](https://github.com/spotify/pedalboard) |
-| **awesome-audio-equalizer** | Python | Processes audio stream from input device, applies filtering, streams to output device. | MIT | [GitHub](https://github.com/Hyper5phere/awesome-audio-equalizer) |
-
-### JavaScript / Web
-
-| Project | Language | What it does | License | Link |
-|---------|----------|--------------|---------|------|
-| **equalizer** (0xba1a) | JavaScript | Web Audio API-based EQ using `AudioContext` and cascaded `BiquadFilterNode`. | — | [GitHub](https://github.com/0xba1a/equalizer) |
-| **equalizer.js** | JavaScript + Canvas | Audio analysis tool with FFT visualization. Visualizations synced to playback. | MIT | [GitHub](https://github.com/jonobr1/equalizer.js) |
-| **Waviz** | React + TypeScript | Audio visualization library with waveforms and frequency bars. Published on npm. | MIT | [GitHub](https://github.com/Waviz-Team/Waviz) |
-
-### C / C++ (VST/AU Plugins)
-
-| Project | Language | Plugin Formats | What it does | License | Link |
-|---------|----------|----------------|--------------|---------|------|
-| **ZLEqualizer** | C++ (JUCE) | VST3, AU, LV2 | Dynamic EQ with customizable bands, spectrum display, equalization match feature. | GPL-3.0 | [GitHub](https://github.com/ZL-Audio/ZLEqualizer) |
-| **FreeEQ8** | C++ (JUCE) | VST3, AU, LV2 | 8-band parametric EQ plugin for macOS, Linux, Windows. Linear phase, dynamic EQ, match EQ. | GPL-3.0 | [GitHub](https://github.com/webprofusion/FreeEQ8) |
-| **equalize_it** | C++ (JUCE) | VST3 | 12-band parametric EQ. | GPL-3.0 | [GitHub](https://github.com/egoracle/equalize_it) |
-| **RBJ Audio EQ Cookbook** | C++ | — | Implementation of Robert Bristow-Johnson's EQ filter coefficient formulas. | — | [GitHub](https://github.com/bartoszsh/RBJ-Audio-EQ-Cookbook) |
-
-### Desktop Applications
-
-| Project | Platform | What it does | License | Link |
-|---------|----------|--------------|---------|------|
-| **eqMac** | macOS | System-wide audio equalizer with volume mixer. Swift-based. | GPL-3.0 | [GitHub](https://github.com/bitgapp/eqmac) |
-| **Equalizer APO** | Windows | Parametric/graphic equalizer. Uses Windows Audio Processing Object (APO) interface. | GPL-2.0 | [SourceForge](https://sourceforge.net/projects/equalizerapo/) |
-
----
-
-## Visualization
-
-> Tools that render audio data as visual output: waveforms, spectrograms, frequency bars, and audio-reactive graphics.
-
-### JavaScript Libraries (Browser)
-
-| Project | Language | What it does | License | Link |
-|---------|----------|--------------|---------|------|
-| **wavesurfer.js** | TypeScript | Interactive audio waveform rendering and playback. Plugins: Regions, Timeline, Envelope, Minimap, Record, Spectrogram, Hover. | BSD-3 | [GitHub](https://github.com/katspaugh/wavesurfer.js) |
-| **peaks.js** (BBC) | JavaScript | Audio waveform display with zoom/pan interaction. | MIT | [GitHub](https://github.com/bbc/peaks.js) |
-| **audioMotion-analyzer** | JavaScript | Real-time spectrum analyzer. CQT, FFT, octave bands. Multiple scales: linear, log, Mel, ERB, Bark. | ISC | [GitHub](https://github.com/hvianna/audioMotion-analyzer) |
-| **Clubber.js** | JavaScript | Music theory concepts applied to audio-reactive visualization. | MIT | [GitHub](https://github.com/lo-th/clubber) |
-| **Pulse Visualizer** | C++ | Audio visualizer inspired by MiniMeters. Cross-platform via CMake. | GPL-3 | [GitHub](https://github.com/Audio-Solutions/pulse-visualizer) |
-
-### React Ecosystem
-
-| Project | Platform | What it does | Link |
-|---------|----------|--------------|------|
-| **react-voice-visualizer** | React Web | Web Audio API for audio recording and visualization. Waveform and amplitude bars. | [GitHub](https://github.com/YZarytskyi/react-voice-visualizer) |
-| **react-audio-visualizer-pro** | React Web | Multiple visualization types: waveform, frequency bars, circular. Customizable themes. | [GitHub](https://github.com/SujalXplores/react-audio-visualizer-pro) |
-| **r3f-audio-visualizer** | React + THREE.js | THREE.js 3D visualization synced to audio frequency data. | [GitHub](https://github.com/dcyoung/r3f-audio-visualizer) |
-| **audio-ui** | React | Component library for building audio software UIs. Faders, knobs, meters. | [GitHub](https://github.com/cutoff/audio-ui) |
-| **react-audio-visualize** (samhirtarif) | React | Audio visualizer with separate components for live audio and audio blobs. | [GitHub](https://github.com/samhirtarif/react-audio-visualize) |
-| **Spectro** | React + WebGL | Real-time audio spectrogram generator. | [GitHub](https://github.com/calebjoseph/spectro) |
-
-### Desktop & Standalone Visualizers
-
-| Project | Language | Platform | What it does | License | Link |
-|---------|----------|----------|--------------|---------|------|
-| **cava** | C | Linux, macOS, Windows (WSL) | Terminal frequency bars. Uses ALSA, PulseAudio, PipeWire, or PortAudio input. Color-coded. | MIT | [GitHub](https://github.com/karlstav/cava) |
-| **GLava** | C | Linux | OpenGL-based audio spectrum visualizer for desktop environments. | MIT | [GitHub](https://github.com/jarcode-foss/glava) |
-| **MilkDrop 3** | C++ | Windows | Updated MilkDrop music visualizer with beat detection and double-preset loading. | — | [GitHub](https://github.com/milkdrop2077/milkdrop3) |
-| **ModV** | JavaScript + GLSL | Desktop (Electron) | Modular, shader-based audio visualizer/VJ software. Vue-based. | GPL-3.0 | [GitHub](https://github.com/vcync/modv) |
-| **Euphonica** | Rust + GTK4 | Linux (GNOME) | MPD client with spectrum visualizer. Built with Rust, GTK4, Libadwaita. | MIT | [GitHub](https://github.com/hvianna/euphonica) |
-| **XR3Player** | Java + JavaFX | Cross-platform | Media player with built-in spectrum analyzer and audio visualization. | — | [GitHub](https://github.com/goxr3plus/xr3player) |
-
-### OBS & Video Integration
-
-| Project | Language | What it does | Link |
-|---------|----------|--------------|------|
-| **Waveform (OBS)** | C++ | Audio spectral analysis plugin for OBS Studio. Renders waveform overlay in OBS scenes. | [GitHub](https://github.com/phandasm/waveform) |
-| **videojs-wavesurfer** | JavaScript | Video.js plugin that adds navigable audio/video waveforms and visualization. | [GitHub](https://github.com/collab-project/videojs-wavesurfer) |
-
-| Project | Language | What it does | Link |
-|---------|----------|--------------|------|
-| **ShowCQTBar** | — | Real-time CQT (Constant-Q Transform) bar visualization for audio files. | [GitHub](https://github.com/ChenLX233/ShowCQTBar) |
-
-### Mobile (Flutter / Swift)
-
-| Project | Language | Platform | What it does | Link |
-|---------|----------|----------|--------------|------|
-| **flutter_soloud** | Dart (Flutter) + C++ (FFI) | Mobile/Desktop | Flutter plugin for low-level audio processing and visualization using the SoLoud C++ library via FFI. | [GitHub](https://github.com/alnitak/flutter_soloud) |
-
-### Web Audio Editors
-
-| Project | Language | What it does | License | Link |
-|---------|----------|--------------|---------|------|
-| **Waveform Playlist** | TypeScript | Multitrack Web Audio editor/player with canvas waveform preview, cue/fade editing, WAV/AudioBuffer export. | MIT | [GitHub](https://github.com/naomiaro/waveform-playlist) |
-
----
-
-## Lyrics & Subtitle Synchronization
-
-> Tools for parsing, generating, aligning, and converting timed text (LRC, SRT, ASS) to match audio playback.
-
-### LRC (Lyrics) — Parsers & Libraries
-
-| Project | Language | What it does | License | Link |
-|---------|----------|--------------|---------|------|
-| **syncedlyrics** | Python | Fetches and parses synchronized lyrics in LRC format from online sources. | MIT | [GitHub](https://github.com/moehmeni/syncedlyrics) |
-| **openlrc** | Python | Transcribes audio with OpenAI Whisper, translates with LLM (GPT/Claude), outputs LRC files. | GPL-3.0 | [GitHub](https://github.com/zh-plus/openlrc) |
-| **lrcget** | Vue + Rust | Utility for mass-downloading LRC synced lyrics for offline music library. | MIT | [GitHub](https://github.com/tranxuanthang/lrcget) |
-| **syrics** | Python | CLI tool to fetch lyrics from Spotify and save to lrc file. | GPL-3.0 | [GitHub](https://github.com/akashrchandran/syrics) |
-| **Lyrica** | Python | Tool to fetch lyrics (synced and non-synced) and print as JSON. | — | [GitHub](https://github.com/Wilooper/Lyrica) |
-| **lrxy** | Python | Synced lyrics downloader, converter and embedder tool. | GPL-3.0 | [GitHub](https://github.com/pxeemo/lrxy) |
-| **Lyricsync** | Python | Auto-sync via VAD + WhisperX + segment alignment. CLI and Web UI. | — | [GitHub](https://github.com/sparksthedragon0101/Lyricsync) |
-| **lrc-kit** (reteps) | Python | Library for searching, downloading, and parsing song lyrics in LRC format. | — | [GitHub](https://github.com/reteps/lrc-kit) |
-| **lrc-kit** (weirongxu) | TypeScript | Lyric parser, maker, and runner. JavaScript/TypeScript ecosystem. | MIT | [GitHub](https://github.com/weirongxu/lrc-kit) |
-| **lrc-file-parser** | JavaScript | JavaScript-based LRC file parser. | — | [GitHub](https://github.com/lyswhut/lrc-file-parser) |
-| **liricle** | TypeScript | JS/TS library to synchronize lyrics with audio playback position. | — | [GitHub](https://github.com/mcanam/liricle) |
-| **lrctoolbox** | Python | CLI tool for .lrc files: edit, convert, analyze. | — | [GitHub](https://github.com/Dr-Blank/lrctoolbox) |
-
-### LRC — Tools & Editors
-
-| Project | Language | What it does | Link |
-|---------|----------|--------------|------|
-| **LySy** | Web (JS) | Web app for timestamp-based LRC lyric creation with download. | [GitHub](https://github.com/pxeemo/LySy) |
-| **EasyLRC** | Web | Web-based LRC lyric editing interface. | [GitHub](https://github.com/landeyucc/EasyLRC) |
-
-### LRC — Specifications & Extensions
-
-| Resource | Format | What it does | Link |
-|----------|--------|--------------|------|
-| **LRCv2** (draft) | LRC v2 | Spec draft for synced lyrics with translation support, metadata fields, and chord annotations. | [GitHub](https://github.com/marz1877/LRCv2) |
-| **lyrsync** | JavaScript + CSS | Uses CSS custom properties and timers to display synced lyrics with styling. | [GitHub](https://github.com/YoshiWalsh/lyrsync) |
-| **Accompanist-Lyrics** | Kotlin | Parse, convert, export lyrics. Supports Apple Music format and LRC. For Android/JVM. | [GitHub](https://github.com/6xingyv/Accompanist-Lyrics) |
-
-### Subtitle Synchronization
-
-| Project | Language | Method | What it does | License | Link |
-|---------|----------|--------|--------------|---------|------|
-| **ffsubsync** | Python + C | Audio fingerprinting | Automatic subtitle sync using audio fingerprint alignment. Supports SRT, ASS, VTT. | MIT | [GitHub](https://github.com/smacke/ffsubsync) |
-| **autosubsync** (oseiskar) | Python | AI/ML shift + speed correction | Resynchronizes subtitles without human input. Detects time shift and playback speed drift. | MIT | [GitHub](https://github.com/oseiskar/autosubsync) |
-
----
+# I. Core Development
 
 ## Audio Processing & Analysis
 
@@ -184,27 +52,27 @@
 | **web-audio-beat-detector** | Detects BPM and beat positions from audio via Web Audio API. | MIT | [GitHub](https://github.com/chrisguttandin/web-audio-beat-detector) |
 | **waveform-data-generator** (BBC) | Resample, offset, and segment waveform peak data. | MIT | [GitHub](https://github.com/bbc/waveform-data-generator) |
 
-### C / C++
+### Native & Systems (C/C++, Rust, Go)
 
-| Project | What it does | License | Link |
-|---------|--------------|---------|------|
-| **libsndfile** | Audio file I/O. Read/write WAV, AIFF, FLAC, OGG, and more. | LGPL-2.1 | [GitHub](https://github.com/libsndfile/libsndfile) |
-| **SoX** | Format conversion, effects, analysis. CLI tool. | GPL-2.0 / LGPL | [SourceForge](https://sourceforge.net/projects/sox/) |
+| Project | Language | What it does | License | Link |
+|---------|----------|--------------|---------|------|
+| **libsndfile** | C | Audio file I/O. Read/write WAV, AIFF, FLAC, OGG, and more. | LGPL-2.1 | [GitHub](https://github.com/libsndfile/libsndfile) |
+| **SoX** | C | Format conversion, effects, analysis. CLI tool. | GPL-2.0 / LGPL | [SourceForge](https://sourceforge.net/projects/sox/) |
+| **hound** | Rust | WAV encoding and decoding. | MIT | [GitHub](https://github.com/ruuda/hound) |
+| **rodio** | Rust | Audio playback. WAV, OGG, FLAC, MP3 with effects. | Zlib | [GitHub](https://github.com/RustAudio/rodio) |
+| **audio** | Go | Audio processing interface. Decoding, encoding, resampling, effects pipeline. | — | [GitHub](https://github.com/gopxl/audio) |
 
-### Rust
+## DSP & Plugin Development
 
-| Project | What it does | License | Link |
-|---------|--------------|---------|------|
-| **hound** | WAV encoding and decoding. | MIT | [GitHub](https://github.com/ruuda/hound) |
-| **rodio** | Audio playback. WAV, OGG, FLAC, MP3 with effects. | Zlib | [GitHub](https://github.com/RustAudio/rodio) |
+> Frameworks and tools for building audio plugins (VST, AU, AAX) and digital signal processing.
 
-### Go
-
-| Project | What it does | Link |
-|---------|--------------|------|
-| **audio** | Audio processing interface. Decoding, encoding, resampling, effects pipeline. | [GitHub](https://github.com/gopxl/audio) |
-
----
+| Project | Language | Plugin Formats | What it does | License | Link |
+|---------|----------|----------------|--------------|---------|------|
+| **JUCE** | C++17 | VST, VST3, AU, AUv3, AAX, LV2 | Cross-platform framework. Includes Projucer IDE, CMake build, DSP module (IIR, FIR, convolution, FFT). | BSD/Commercial | [GitHub](https://github.com/juce-framework/JUCE) |
+| **iPlug2** | C++11 | VST2, VST3, AU, AUv3, AAX, WAM | Alternative to JUCE. CMake build, iOS/Android support, web-based plugin support. | zlib | [GitHub](https://github.com/iPlug2/iPlug2) |
+| **DISTRHO** | C++ | LV2, VST2, VST3 | Plugin framework for Linux. Focus on LV2 ecosystem. | ISC | [GitHub](https://github.com/DISTRHO/DISTRHO-Ports) |
+| **NIH-Plug** | Rust | VST3, CLAP | Rust-based audio plugin framework. | MIT | [GitHub](https://github.com/robbert-vdh/nih-plug) |
+| **Web Audio Modules (WAM)** | JavaScript | Web Audio | Specification for running Web Audio API-based plugins in the browser. | — | [GitHub](https://github.com/webaudiomodules) |
 
 ## Web Audio API
 
@@ -220,32 +88,171 @@
 
 ---
 
-## DSP & Plugin Development
+# II. AI & Voice Intelligence
 
-> Frameworks and tools for building audio plugins (VST, AU, AAX) and digital signal processing.
+## Speech & Voice (STT & TTS)
 
-| Project | Language | Plugin Formats | What it does | License | Link |
-|---------|----------|----------------|--------------|---------|------|
-| **JUCE** | C++17 | VST, VST3, AU, AUv3, AAX, LV2 | Cross-platform framework. Includes Projucer IDE, CMake build, DSP module (IIR, FIR, convolution, FFT). | BSD/Commercial | [GitHub](https://github.com/juce-framework/JUCE) |
-| **iPlug2** | C++11 | VST2, VST3, AU, AUv3, AAX, WAM | Alternative to JUCE. CMake build, iOS/Android support, web-based plugin support. | zlib | [GitHub](https://github.com/iPlug2/iPlug2) |
-| **DISTRHO** | C++ | LV2, VST2, VST3 | Plugin framework for Linux. Focus on LV2 ecosystem. | ISC | [GitHub](https://github.com/DISTRHO/DISTRHO-Ports) |
-| **NIH-Plug** | Rust | VST3, CLAP | Rust-based audio plugin framework. | MIT | [GitHub](https://github.com/robbert-vdh/nih-plug) |
-| **Web Audio Modules (WAM)** | JavaScript | Web Audio | Specification for running Web Audio API-based plugins in the browser. | — | [GitHub](https://github.com/webaudiomodules) |
+### Model Comparison
+
+| Model / Library | Primary Task | Speed | Accuracy | Best For |
+|-----------------|--------------|-------|----------|----------|
+| **Whisper Turbo**| STT | Fast | High | Multilingual, Production |
+| **Canary** | STT | Medium | Very High | High Precision, Translation |
+| **Vosk** | STT | Instant | Medium | Edge Devices, Offline |
+| **Parler-TTS** | TTS | Medium | High | Natural Language Control |
+| **MeloTTS** | TTS | Instant | High | Real-time, CPU Inference |
+
+### Speech-to-Text (STT) / ASR
+
+| Project | What it does | Language / Backend | License | Link |
+|---------|--------------|--------------------|---------|------|
+| **Whisper** (OpenAI) | Robust, multilingual speech recognition. Large-v3 Turbo offers high accuracy with 5x speedup. | Python / PyTorch | MIT | [GitHub](https://github.com/openai/whisper) |
+| **faster-whisper** | Reimplementation of Whisper using CTranslate2. Up to 4x faster and more memory efficient. | Python / C++ | MIT | [GitHub](https://github.com/SYSTRAN/faster-whisper) |
+| **Canary** (NVIDIA) | 1B parameter model for high-accuracy STT and translation in English, German, French, and Spanish. | Python / NeMo | Apache-2.0 | [GitHub](https://github.com/NVIDIA/NeMo) |
+| **Vosk** | Offline, lightweight STT for edge devices (Android, iOS, Raspberry Pi). 20+ languages. | C / Python | Apache-2.0 | [GitHub](https://github.com/alphacep/vosk-api) |
+
+### Text-to-Speech (TTS)
+
+| Project | What it does | Language / Backend | License | Link |
+|---------|--------------|--------------------|---------|------|
+| **Parler-TTS** | Fully open-source TTS that generates high-quality speech based on natural language prompts. | Python / HF | Apache-2.0 | [GitHub](https://github.com/huggingface/parler-tts) |
+| **MeloTTS** | Real-time TTS optimized for CPU inference. Supports multiple languages and accents. | Python | MIT | [GitHub](https://github.com/myshell-ai/MeloTTS) |
+| **Piper** | Extremely fast, local neural TTS engine for low-power devices. Uses ONNX. | C++ / Python | MIT | [GitHub](https://github.com/rhasspy/piper) |
+| **ChatTTS** | Optimized for conversational audio with natural prosody (laughter, pauses, "um/ah"). | Python | CC BY-NC 4.0 | [GitHub](https://github.com/2noise/ChatTTS) |
+
+## Noise Reduction & Enhancement
+
+| Project | What it does | Language / Tech | License | Link |
+|---------|--------------|-----------------|---------|------|
+| **DeepFilterNet** | State-of-the-art full-band (48kHz) audio enhancement using deep filtering. Very efficient. | Rust / PyTorch | MIT/Apache | [GitHub](https://github.com/Rikorose/DeepFilterNet) |
+| **RNNoise** | Recurrent neural network for real-time noise suppression. Used in many OBS/Linux plugins. | C | BSD-3 | [GitHub](https://github.com/xiph/rnnoise) |
+| **NoiseTorch** | User-friendly Linux app that creates a virtual microphone with real-time noise suppression. | Go / RNNoise | GPL-3.0 | [GitHub](https://github.com/noisetorch/NoiseTorch-ng) |
+| **VoiceFixer** | Restores speech by removing noise, reverb, and clipping while increasing resolution. | Python | MIT | [GitHub](https://github.com/haoheliu/voicefixer) |
+
+## Audio Datasets
+
+| Dataset | Category | What it contains | Link |
+|---------|----------|------------------|------|
+| **AudioSet** (Google) | General / SED | 2M+ YouTube clips, 527 sound classes. The "ImageNet" of audio. | [Website](https://research.google.com/audioset/) |
+| **Common Voice** (Mozilla) | Speech (ASR) | Massive, multi-language crowd-sourced speech dataset (30k+ hours). | [Website](https://commonvoice.mozilla.org/) |
+| **LibriSpeech** | Speech (ASR) | 1,000 hours of English read speech from audiobooks. Standard benchmark. | [Website](https://www.openslr.org/12) |
+| **MUSDB18** | Music (Source Sep) | 150 full-length tracks with isolated stems (vocals, drums, bass, other). | [Website](https://sigsep.github.io/datasets/musdb18.html) |
+| **ESC-50** | Environmental | 2,000 labeled 5-second environmental recordings across 50 classes. | [GitHub](https://github.com/karolpiczak/ESC-50) |
+| **FMA** (Free Music Archive) | Music / MIR | 100k+ tracks with metadata and pre-computed features. | [GitHub](https://github.com/mdeff/fma) |
 
 ---
 
+# III. Tools & Applications
+
+## Lyrics & Subtitle Synchronization
+
+### Editor Comparison
+
+| Tool | Format Support | Waveform | Styling (ASS) | Best For |
+|------|----------------|----------|---------------|----------|
+| **Aegisub** | High (ASS/SRT) | Yes | Advanced | Fansubbing, Karaoke |
+| **Subtitle Edit** | Very High (300+) | Yes | Moderate | All-purpose, AI Tools |
+| **Karaoke Lyric Editor**| Lyrics (LRC) | No | Moderate | Dedicated Lyric Sync |
+| **Subtitld** | Moderate | Yes | Basic | Modern UI, Linux |
+
+### Subtitle & Lyrics Editors
+
+| Project | Language | Platform | What it does | License | Link |
+|---------|----------|----------|--------------|---------|------|
+| **Aegisub** | C++ (wxWidgets) | Linux, macOS, Windows | Advanced subtitle editor with waveform visualization, karaoke effects (KFX), ASS styling, automation scripts, and real-time video preview. | GPL-2.0 | [GitHub](https://github.com/Aegisub/Aegisub) |
+| **Subtitle Edit** | C# (.NET) | Windows, Linux, macOS | Feature-rich subtitle editor with waveform/spectrogram view, auto-translation via Google/Bing, spell check, merge/split, 300+ format support, and OCR. | GPL-3.0 | [GitHub](https://github.com/SubtitleEdit/subtitleedit) |
+| **Subtitle Composer** | C++ (Qt/KDE) | Linux, Windows, macOS | Video-based subtitle editor with waveform, speech recognition (via vosk/sphinx), real-time preview, and karaoke support. | GPL-2.0 | [GitHub](https://github.com/maxrd2/subtitlecomposer) |
+| **Subtitld** | Python (Qt) | Linux, Windows | Modern, timeline-based subtitle editor with transcription, styling, and splitting tools. | GPL-3.0 | [GitHub](https://github.com/subtitld/subtitld) |
+| **Subtitle Workshop Classic** | Pascal | Windows (Wine-compatible) | Community-driven continuation of the classic Subtitle Workshop. Supports 60+ formats and powerful batch operations. | GPL-3.0 | [GitHub](https://github.com/SubtitleWorkshop/subtitleworkshop) |
+| **Jubler** | Java | Linux, macOS, Windows | Multi-format subtitle editor, translator, and timing tool with spell check, styles editor, and video preview. | GPL-2.0 | [GitHub](https://github.com/teras/Jubler) |
+| **Gaupol** | Python (GTK) | Linux, macOS, Windows | Subtitle editor focused on text-based editing and batch timing adjustments. Supports speech recognition integration and multiple formats. | ISC | [GitHub](https://github.com/aegisub/gaupol) |
+| **Gnome Subtitles** | C (GTK) | Linux | Lightweight subtitle editor with video preview, timing adjustments, and translation support. | GPL-2.0 | [GitHub](https://github.com/pedro-git/gnome-subtitles) |
+| **Amara** | Python (Django) | Web | Collaborative subtitle and translation platform. Supports video hosting services, team workflows, and version control. | BSD | [GitHub](https://github.com/Amara-Platform/amara) |
+| **Ollant** | C++ (Qt) | Linux, Windows | Subtitle editor with waveform visualization, real-time preview, and ASS styling support. | GPL-3.0 | [GitHub](https://github.com/leonardowf/ollant) |
+
+### LRC — Tools & Editors
+
+| Project | Language | What it does | Link |
+|---------|----------|--------------|------|
+| **Karaoke Lyric Editor** | C++ (Qt) | Dedicated tool for creating and testing LRC and CDG karaoke files. Real-time preview and video export. | [GitHub](https://github.com/vkrasnov/karlyriceditor) |
+| **LRC Maker** | JavaScript | Web-based tool for creating LRC files with precise timing and metadata support. | [GitHub](https://github.com/mcanam/lrc-maker) |
+| **LRC Editor** | Java | Simple, cross-platform desktop application for creating and editing LRC files. | [GitHub](https://github.com/fashni/lrc-editor) |
+| **LySy** | Web (JS) | Web app for timestamp-based LRC lyric creation with download. | [GitHub](https://github.com/pxeemo/LySy) |
+| **EasyLRC** | Web | Web-based LRC lyric editing interface. | [GitHub](https://github.com/landeyucc/EasyLRC) |
+
+### Synchronization Tools & specs
+
+- **[ffsubsync](https://github.com/smacke/ffsubsync)** (Python) - Automatic subtitle sync via audio fingerprinting.
+- **[autosubsync](https://github.com/oseiskar/autosubsync)** (Python) - AI-powered shift and speed correction for subtitles.
+- **[LRCv2 Spec](https://github.com/marz1877/LRCv2)** - Draft for synced lyrics with translation and chord support.
+- **[syncedlyrics](https://github.com/moehmeni/syncedlyrics)** (Python) - Fetch and parse LRC lyrics from online sources.
+
+## Equalizer
+
+### Desktop Applications
+
+- **[eqMac](https://github.com/bitgapp/eqmac)** (macOS) - System-wide audio equalizer and volume mixer.
+- **[Equalizer APO](https://sourceforge.net/projects/equalizerapo/)** (Windows) - Powerful parametric/graphic equalizer using Windows APO.
+
+### Developer Libraries
+
+- **[pedalboard](https://github.com/spotify/pedalboard)** (Python) - Spotify's framework for VST3/AU hosting and built-in effects.
+- **[ZLEqualizer](https://github.com/ZL-Audio/ZLEqualizer)** (C++) - JUCE-based dynamic EQ with spectrum display.
+- **[equalizer.js](https://github.com/jonobr1/equalizer.js)** (JS) - FFT-based analysis and EQ tool.
+
+## Visualization
+
+### Web & React
+
+- **[wavesurfer.js](https://github.com/katspaugh/wavesurfer.js)** - Interactive audio waveform rendering.
+- **[peaks.js](https://github.com/bbc/peaks.js)** - BBC's waveform display with zoom/pan interaction.
+- **[audioMotion-analyzer](https://github.com/hvianna/audioMotion-analyzer)** - High-performance real-time spectrum analyzer.
+- **[react-voice-visualizer](https://github.com/YZarytskyi/react-voice-visualizer)** - Waveform and amplitude bars for recording.
+
+### Desktop & CLI
+
+- **[cava](https://github.com/karlstav/cava)** (C) - Terminal frequency bars for Linux, macOS, and Windows.
+- **[GLava](https://github.com/jarcode-foss/glava)** (C) - OpenGL audio spectrum visualizer for Linux.
+- **[ModV](https://github.com/vcync/modv)** (JS) - Modular VJ software and audio visualizer.
+
+---
+
+# IV. Learning & Community
+
+## Resources & Learning
+
+### 📺 YouTube Channels
+
+- **[The Audio Programmer](https://www.youtube.com/@TheAudioProgrammer)** - Essential for C++ and JUCE framework.
+- **[WolfSound](https://www.youtube.com/@WolfSoundAudio)** - Intuitive DSP theory and implementation.
+- **[DSP Fundamentals](https://www.youtube.com/@dspfundamentals)** - Academic lectures on signals and systems.
+- **[3Blue1Brown](https://www.youtube.com/@3blue1brown)** - Beautiful math visualizations (Fourier Transform).
+- **[MIT DSP Lectures](https://www.youtube.com/playlist?list=PLUl4u3cNGP606x_3_Vz7X_v_8vV_v_8vV)** - Foundational signal theory by Prof. Oppenheim.
+
+### 📚 Books & Articles
+
+- **[The Scientist and Engineer's Guide to DSP](https://www.dspguide.com/)** - Best starting point (Free online).
+- **[DAFx: Digital Audio Effects](https://www.dafx.de/)** - Standard reference for audio algorithms.
+- **[Audio EQ Cookbook](https://www.w3.org/TR/audio-eq-cookbook/)** - Core formulas for biquad filters.
+- **[Julius O. Smith's CCRMA Guides](https://ccrma.stanford.edu/~jos/)** - Comprehensive deep dives into filters and physical modeling.
+
+### 🎙️ Podcasts & Blogs
+
+- **[Tape Notes](https://tapenotes.co.uk/)** - Producers breakdown track stems.
+- **[Song Exploder](https://songexploder.net/)** - Deep dives into song creation.
+- **[Sound on Sound](https://www.soundonsound.com/)** - Technical articles and industry reviews.
+- **[The Pro Audio Files](https://theproaudiofiles.com/)** - Mixing and production tutorials.
+
 ## Contributing
 
-Contributions are welcome. Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-To add a resource:
-1. Check existing entries to avoid duplicates
-2. Include technical details (language, license, what it does)
-3. Add to the most relevant section
-4. Submit a Pull Request
+1.  **Check existing entries** to avoid duplicates.
+2.  **Provide technical details** (Language, License, Feature summary).
+3.  **Choose the right Pillar** (Core, AI, or Tools).
 
 ---
 
 ## License
 
-This list is dedicated to the public domain under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
+Dedicated to the public domain under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
