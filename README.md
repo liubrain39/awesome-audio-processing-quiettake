@@ -128,6 +128,7 @@
 | **RNNoise** | Recurrent neural network for real-time noise suppression. Used in many OBS/Linux plugins. | C | BSD-3 | [GitHub](https://github.com/xiph/rnnoise) |
 | **NoiseTorch** | User-friendly Linux app that creates a virtual microphone with real-time noise suppression. | Go / RNNoise | GPL-3.0 | [GitHub](https://github.com/noisetorch/NoiseTorch-ng) |
 | **VoiceFixer** | Restores speech by removing noise, reverb, and clipping while increasing resolution. | Python | MIT | [GitHub](https://github.com/haoheliu/voicefixer) |
+| **QuietTake Noise Remover** | Browser-local speech noise reduction, original/cleaned playback and 48 kHz 16-bit WAV export; each file must be 50 MB or smaller and five minutes or shorter. | TypeScript / RNNoise WASM | — (website source private) | [Website](https://noiseremover.site/) |
 
 ## Audio Datasets
 
